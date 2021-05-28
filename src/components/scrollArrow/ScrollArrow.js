@@ -6,16 +6,16 @@ function ScrollArrow() {
   const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleCheckScrollTop);
-  }, []);
-
-  function handleCheckScrollTop() {
-    if (!showScroll && window.pageYOffset > 400) {
-      setShowScroll(true);
-    } else if (showScroll && window.pageYOffset <= 400) {
-      setShowScroll(false);
+    function handleCheckScrollTop() {
+      if (!showScroll && window.pageYOffset > 400) {
+        setShowScroll(true);
+      } else if (showScroll && window.pageYOffset <= 400) {
+        setShowScroll(false);
+      }
     }
-  }
+
+    window.addEventListener("scroll", handleCheckScrollTop);
+  }, [showScroll]);
 
   function handleScrollTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
