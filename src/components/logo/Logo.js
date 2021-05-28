@@ -1,6 +1,6 @@
 import { FlexboxGrid } from "rsuite";
 
-function Logo() {
+function Logo({ height }) {
   return (
     <FlexboxGrid style={{ height: "56px", margin: "0 16px" }} align="middle">
       <svg
@@ -9,7 +9,7 @@ function Logo() {
         className="jsx-2263963463 artboard-inner"
         style={{
           width: "auto",
-          height: "24px",
+          height: height,
           maxHeight: "100%",
         }}
       >
