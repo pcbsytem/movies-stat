@@ -12,8 +12,8 @@ Favoritos
 
 ## Sobre
 
-O projeto é composto de duas telas, sendo uma de listagem dos filmes recem lançados, onde pode visualizar detalhes sobre os filmes ou sérios, como título, sinopse e data de lançamento. É possível fazer busca pelo título interessado e adicionar os filmes do seu gosto em um favoritos, que você pode ver a relevância dos titulos.
-Foi utilizado <a href="https://pt-br.reactjs.org/">ReactJs</a> na versão 17 e uo Framework de componentes <a href="https://rsuitejs.com/">React Suite (rsuite)</a> para ajudar na agilidade para construir os layouts. Também tive o auxilio do <a href="https://redux.js.org/">Redux</a> para gerenciar alguns estados.
+O projeto é composto de duas telas, sendo uma de listagem dos filmes lançados recentemente, onde pode visualizar detalhes sobre os filmes ou sérios, como título, sinopse e data de lançamento. É possível fazer busca pelo título interessado e adicionar os filmes do seu gosto em um favoritos, que você pode ver a relevância dos títulos.
+Foi utilizado <a href="https://pt-br.reactjs.org/">ReactJs</a> na versão 17 e o Framework de componentes <a href="https://rsuitejs.com/">React Suite (rsuite)</a> para ajudar na agilidade para construir os layouts. Também tive o auxílio do <a href="https://redux.js.org/">Redux</a> para gerenciar alguns estados.
 
 ## Frameworks e libs
 
@@ -38,7 +38,7 @@ NodeJs - <a href="https://nodejs.org/en/download/">https://nodejs.org/en/downloa
 git clone https://github.com/pcbsytem/movies-stat.git
 ```
 
-### Integrando backend
+### Variáveis de ambiente
 
 Crie uma conta na <a href="https://www.themoviedb.org/">TheMoviedb</a>. Vá até configurações do seu perfil e selecione API e copie Chave da API (v3 auth) e cole no .env e .env.prod.
 
