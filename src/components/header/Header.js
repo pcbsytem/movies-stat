@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <Navbar className="header" appearance="inverse">
       <Navbar.Header>
-        <Logo />
+        <Logo height="24px" />
       </Navbar.Header>
       <Navbar.Body>
         <Nav>
