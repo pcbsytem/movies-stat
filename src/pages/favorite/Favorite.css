@@ -28,3 +28,9 @@ div.favoriteItem.rs-list-item:hover {
 .endText {
   text-align: center;
 }
+
+@media (max-width: 1000px) {
+  .favoriteItem {
+    margin: 16px;
+  }
+}
