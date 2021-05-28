@@ -10,6 +10,8 @@ Home
 Favoritos
 ![Screenshot_2021-05-28 React App](https://user-images.githubusercontent.com/19713358/120040899-bb8a1b00-bfdd-11eb-90de-7b3b2a1e2bcc.png)
 
+### Link para acesso <a href="https://movies-stat.vercel.app/">aqui</a>
+
 ## Sobre
 
 O projeto é composto de duas telas, sendo uma de listagem dos filmes lançados recentemente, onde pode visualizar detalhes sobre os filmes ou sérios, como título, sinopse e data de lançamento. É possível fazer busca pelo título interessado e adicionar os filmes do seu gosto em um favoritos, que você pode ver a relevância dos títulos.
