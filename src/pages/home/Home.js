@@ -1,15 +1,23 @@
-import React from "react";
-import api from "../../services/api"
+import { lazy, Suspense } from "react";
 
-function Home() {
+import Loading from "../../components/loading/Loading";
+import "./Home.css";
 
-  function handleGetMovies() {
-const moviest = 
-  }
+const HomeList = lazy(() => import("./HomeList"));
 
-  return <>
-
-  </>;
+function Home(props) {
+  return (
+    <>
+      <div className="homeBanner">
+        <h1>Encontre os melhores filmes aqui</h1>
+        <br />
+        <p>O melhor catalógo de filmes da Amera Latina</p>
+      </div>
+      <Suspense fallback={<Loading />}>
+        <HomeList />
+      </Suspense>
+    </>
+  );
 }
 
 export default Home;
