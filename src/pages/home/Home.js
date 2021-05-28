@@ -14,7 +14,7 @@ function Home(props) {
         <br />
         <h1>Encontre os melhores filmes aqui</h1>
         <br />
-        <p>O melhor catalógo de filmes da Amera Latina</p>
+        <p>O melhor catalógo de filmes da América Latina</p>
       </div>
       <Suspense fallback={<Loading />}>
         <HomeList />
