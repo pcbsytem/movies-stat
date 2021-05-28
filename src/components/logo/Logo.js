@@ -1,8 +1,12 @@
 import { FlexboxGrid } from "rsuite";
 
-function Logo({ height }) {
+function Logo({ height, rest }) {
   return (
-    <FlexboxGrid style={{ height: "56px", margin: "0 16px" }} align="middle">
+    <FlexboxGrid
+      style={{ height: "56px", margin: "0 16px" }}
+      align="middle"
+      {...rest}
+    >
       <svg
         viewBox="-300.84873949579827 -111.00000000000001 1098.1344537815123 200"
         version="1.1"
