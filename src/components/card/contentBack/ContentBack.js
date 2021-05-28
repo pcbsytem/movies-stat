@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { IconButton, Icon, FlexboxGrid } from "rsuite";
+import { FlexboxGrid, IconButton, Icon } from "rsuite";
 import { toast } from "react-toastify";
 
 import { addFavorite } from "../../../store/modules/card/action";
@@ -8,6 +8,7 @@ import "../Card.css";
 
 export default function ContentBack() {
   const dispatch = useDispatch();
+
   const { detail } = useSelector((state) => ({
     detail: state.card.detail,
   }));
