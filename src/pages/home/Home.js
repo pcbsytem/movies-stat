@@ -11,8 +11,8 @@ function Home(props) {
   return (
     <>
       <Banner
-        title="Encontre os melhores filmes aqui"
-        subTitle="O melhor catalógo de filmes da América Latina"
+        title="Encontre os melhores filmes e seriados aqui"
+        subTitle="O mais completo guia de filmes e séries"
       />
       <ScrollArrow />
       <Suspense fallback={<Loading />}>
