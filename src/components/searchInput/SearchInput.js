@@ -25,20 +25,22 @@ function SearchInput({ placeholder, action, width, ...props }) {
   }
 
   return (
-    <InputGroup
-      {...props}
-      style={{ padding: "16px", width, maxWidth: "100%" }}
-      inside
-    >
-      <Input placeholder={placeholder} onChange={handleChange} />
-      <InputGroup.Button
-        onClick={handleClick}
-        style={{ top: "16px", right: "16px" }}
-        loading={loading}
+    <>
+      <InputGroup
+        {...props}
+        style={{ padding: "16px", width, maxWidth: "1280px" }}
+        inside
       >
-        <Icon icon="search" />
-      </InputGroup.Button>
-    </InputGroup>
+        <Input placeholder={placeholder} onChange={handleChange} />
+        <InputGroup.Button
+          onClick={handleClick}
+          style={{ top: "16px", right: "16px" }}
+          loading={loading}
+        >
+          <Icon icon="search" />
+        </InputGroup.Button>
+      </InputGroup>
+    </>
   );
 }
 
