@@ -2,19 +2,15 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FlexboxGrid, Icon } from "rsuite";
 
-import {
-  getMoviesSearch,
-  getUpcomingMovies,
-} from "../../store/modules/home/action";
+import { getUpcomingMovies } from "../../store/modules/home/action";
 
 import Card from "../../components/card/Card";
 import Pagination from "../../components/pagination/Pagination";
-import SearchInput from "../../components/searchInput/SearchInput";
 
 function HomeList() {
   const dispatch = useDispatch();
   const { movies = { results: [] } } = useSelector((state) => ({
-    movies: state.home.movies,
+    movies: state.home.movies
   }));
 
   useEffect(() => {
@@ -25,23 +21,8 @@ function HomeList() {
     dispatch(getUpcomingMovies(page));
   }
 
-  function handleSearch(search) {
-    if (search) {
-      return dispatch(getMoviesSearch(1, search));
-    }
-
-    dispatch(getUpcomingMovies(1));
-  }
-
   return (
-    <>
-      <SearchInput
-        size="lg"
-        width="771px"
-        placeholder="Buscar..."
-        action={handleSearch}
-      />
-
+    <section style={{ textAlign: "center" }}>
       {movies.results?.length > 0 && (
         <>
           <Pagination
@@ -70,7 +51,7 @@ function HomeList() {
           <p>Nenhum filme foi encontrado!</p>
         </FlexboxGrid>
       )}
-    </>
+    </section>
   );
 }
 

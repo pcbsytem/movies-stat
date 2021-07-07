@@ -9,16 +9,17 @@ const HomeList = lazy(() => import("./HomeList"));
 
 function Home(props) {
   return (
-    <>
+    <div className="contentContainer">
       <Banner
         title="Encontre os melhores filmes e seriados aqui"
         subTitle="O mais completo guia de filmes e séries"
       />
       <ScrollArrow />
+
       <Suspense fallback={<Loading />}>
         <HomeList />
       </Suspense>
-    </>
+    </div>
   );
 }
 
