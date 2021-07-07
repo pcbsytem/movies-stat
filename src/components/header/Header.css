@@ -1,5 +1,10 @@
+.headerContainer {
+  width: 100%;
+}
 div.rs-navbar.header {
   width: 100%;
-  background-color: rgb(66, 66, 66);
+  margin: auto;
+  max-width: 1280px;
+  background-color: transparent;
   color: rgb(255, 255, 255);
 }

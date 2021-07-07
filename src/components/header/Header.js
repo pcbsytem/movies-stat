@@ -12,23 +12,28 @@ export default function Header() {
   }
 
   return (
-    <Navbar className="header" appearance="inverse">
-      <Navbar.Header>
-        <Logo height="24px" />
-      </Navbar.Header>
-      <Navbar.Body>
-        <Nav>
-          <Nav.Item icon={<Icon icon="home" />} onClick={() => handleClick("")}>
-            Home
-          </Nav.Item>
-          <Nav.Item
-            icon={<Icon icon="heart" />}
-            onClick={() => handleClick("favoritos")}
-          >
-            Favoritos
-          </Nav.Item>
-        </Nav>
-      </Navbar.Body>
-    </Navbar>
+    <nav className="headerContainer">
+      <Navbar className="header" appearance="inverse">
+        <Navbar.Header>
+          <Logo height="24px" />
+        </Navbar.Header>
+        <Navbar.Body>
+          <Nav>
+            <Nav.Item
+              icon={<Icon icon="home" />}
+              onClick={() => handleClick("")}
+            >
+              Home
+            </Nav.Item>
+            <Nav.Item
+              icon={<Icon icon="heart" />}
+              onClick={() => handleClick("favoritos")}
+            >
+              Favoritos
+            </Nav.Item>
+          </Nav>
+        </Navbar.Body>
+      </Navbar>
+    </nav>
   );
 }
