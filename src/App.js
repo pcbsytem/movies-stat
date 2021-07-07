@@ -9,9 +9,9 @@ import "./App.css";
 function App(props) {
   return (
     <Provider store={Store}>
-      <div className="App">
+      <main className="App">
         <Routes />
-      </div>
+      </main>
       <Footer />
       <ToastContainer />
     </Provider>
