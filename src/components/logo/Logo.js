@@ -1,21 +1,18 @@
 import { FlexboxGrid } from "rsuite";
+import "./Logo.css";
 
 function Logo({ height, rest }) {
   return (
     <FlexboxGrid
-      style={{ height: "56px", margin: "0 16px" }}
       align="middle"
+      style={{ height: "56px", margin: "0 16px" }}
       {...rest}
     >
       <svg
+        className="logoImage"
         viewBox="-300.84873949579827 -111.00000000000001 1098.1344537815123 200"
         version="1.1"
-        className="jsx-2263963463 artboard-inner"
-        style={{
-          width: "auto",
-          height: height,
-          maxHeight: "100%",
-        }}
+        style={{ height: height }}
       >
         <g
           transform="translate(-7.142857142857143 56.00000000000001) scale(1.984126984126984)"
