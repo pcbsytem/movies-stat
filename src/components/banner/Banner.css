@@ -16,6 +16,10 @@
   font-size: 1.2rem;
 }
 
+.bannerSubTitle {
+  margin-bottom: 64px;
+}
+
 @media (max-width: 460px) {
   .banner {
     height: 300px;
