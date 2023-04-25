@@ -46,10 +46,18 @@ Crie uma conta na <a href="https://www.themoviedb.org/">TheMoviedb</a>. Vá até
 
 ![tmdb](https://user-images.githubusercontent.com/19713358/120040461-f8a1dd80-bfdc-11eb-9db4-f891a51f3140.png)
 
+Com CRA (create-react-app)
 ```
-REACT_APP_API= url principal
-REACT_APP_API_IMAGE= url api de imagens
+REACT_APP_API= url principal (https://api.themoviedb.org/3/movie/550)
+REACT_APP_API_IMAGE= url api de imagens (http://image.tmdb.org/t/p/w185)
 REACT_APP_TOKEN= adicione chave da API (v3 auth)
+```
+
+Com Vite
+```
+VITE_APP_API= url principal (https://api.themoviedb.org/3/movie/550)
+VITE_APP_API_IMAGE= url api de imagens (http://image.tmdb.org/t/p/w185)
+VITE_APP_TOKEN= adicione chave da API (v3 auth)
 ```
 
 ### Rodando frontend
