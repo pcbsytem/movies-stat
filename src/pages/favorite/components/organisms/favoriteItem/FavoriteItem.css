@@ -1,0 +1,14 @@
+div.favoriteItem {
+  background-color: #424242;
+  padding: 0;
+}
+
+div.favoriteItem.rs-list-item:hover {
+  background-color: #42424280;
+}
+
+/* Helpers */
+
+.centerText {
+  text-align: center;
+}
