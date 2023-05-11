@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Input, InputGroup, Loader } from 'rsuite'
 import SearchIcon from '@rsuite/icons/Search'
-import { SearchInputProps } from '../atomos.types'
+import { SearchInputProps } from '../atoms.types'
 
 export function SearchInput({ placeholder, action, size }: SearchInputProps) {
   const [loading, seLoading] = useState(false)
