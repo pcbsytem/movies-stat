@@ -1,3 +1,4 @@
+import { ReactNode } from "react"
 import { TypeAttributes } from "rsuite/esm/@types/common"
 
 export interface IconProps {
@@ -10,4 +11,8 @@ export interface SearchInputProps {
   action: (params: string) => void
   placeholder: string
   size: TypeAttributes.Size
+}
+
+export interface SliderProps {
+  children: ReactNode
 }

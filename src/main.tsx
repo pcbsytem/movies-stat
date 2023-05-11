@@ -5,6 +5,7 @@ import './index.css'
 
 import 'rsuite/dist/rsuite.min.css'
 import 'react-toastify/dist/ReactToastify.css'
+import 'react-multi-carousel/lib/styles.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

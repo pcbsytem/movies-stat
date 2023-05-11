@@ -5,9 +5,11 @@ import { Card } from '../../index'
 import { useMovies } from '../../../hooks/useMovies'
 import { MovieProps } from '../../../../../commons/typing'
 import { EmptyState } from '../../../../../commons/components/organisms/emptyState/EmptyState'
+import { useDetail } from '../../../../detail/hooks/useDetail'
 
 const HomeListComponent = () => {
   const { movies, handleMoviePagination } = useMovies()
+  const { handleDetailOpen } = useDetail()
 
   return (
     <>
@@ -21,7 +23,7 @@ const HomeListComponent = () => {
           />
           <FlexboxGrid className="homeList" justify="center">
             {movies.results.map((movie: MovieProps, index: number) => (
-              <Card movie={movie} key={index} />
+              <Card movie={movie} key={index} action={handleDetailOpen} />
             ))}
           </FlexboxGrid>
           <Pagination

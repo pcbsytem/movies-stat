@@ -1,14 +1,11 @@
 import { Col, FlexboxGrid } from 'rsuite'
-import { useDetail } from '../../../../detail/hooks/useDetail'
 import { Icon, Image } from '../../../../../commons/components'
 import { CardProps } from '../../../Home.types'
 import './Card.css'
 
-export const Card = ({ movie }: CardProps) => {
-  const { handleDetailOpen } = useDetail()
-
+export const Card = ({ movie, action }: CardProps) => {
   return (
-    <div className="card" onClick={() => handleDetailOpen(movie)}>
+    <div className="card" onClick={() => action && action(movie)}>
       <FlexboxGrid.Item className="cardInner" as={Col} colspan={24} md={5}>
         <div className="content">
           {movie?.poster_path ? (
