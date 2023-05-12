@@ -11,12 +11,6 @@
     "preview": "vite preview",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn lint"
-    }
-  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.3.6",
