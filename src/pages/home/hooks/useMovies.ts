@@ -29,7 +29,6 @@ export const useMovies = () => {
       setLoading(false)
       dispatch(addMovieList(result));
     } catch (error) {
-      console.log(error);
       dispatch(addMovieList({
         empty: true,
         dates: {
@@ -60,7 +59,6 @@ export const useMovies = () => {
       setLoading(false)
       dispatch(addMovieList(result));
     } catch (error) {
-      console.error(error)
       dispatch(addMovieList({
         empty: true,
         dates: {

@@ -36,7 +36,6 @@ export const useDetail = () => {
       } = await api.get(`/movie/${rest.id}/similar`, { params })
       return results
     } catch (error) {
-      console.error(error)
       return []
     }
   }, [rest])
