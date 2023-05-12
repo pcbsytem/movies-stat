@@ -3,6 +3,11 @@
   min-height: 272px;
   perspective: 272px;
   background-color: transparent;
+  transition: transform 200ms ease;
+}
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 div.cardInner {
@@ -10,8 +15,6 @@ div.cardInner {
   display: flex;
   padding: 0 !important;
   justify-content: center;
-  transition: transform 0.4s;
-  transform-style: preserve-3d;
 }
 
 .cardInner .rs-flex-box-grid {
@@ -27,10 +30,6 @@ div.cardInner {
 .cardInner .rs-flex-box-grid .overview {
   width: 100%;
   text-align: justify;
-}
-
-.card:hover .cardInner {
-  /* transform: rotateY(180deg); */
 }
 
 .content {
@@ -53,5 +52,4 @@ button.cardFavoriteButton {
   top: 8px;
   right: 8px;
   position: absolute;
-  transition: 500ms ease;
 }
