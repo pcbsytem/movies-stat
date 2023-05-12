@@ -4,7 +4,7 @@ import { Banner, ScrollArrow, SearchInput } from '../../commons/components'
 import { HOME_BANNER_TEXT } from './Home.constants'
 import { Detail } from '../detail'
 import { useMovies } from './hooks/useMovies'
-import { ListSqueleton } from './components'
+import { ListSkeleton } from './components'
 import './Home.css'
 
 const HomeList = lazy(() => import('./components/organisms/homeList/HomeList'))
@@ -32,8 +32,8 @@ export function Home() {
       <Content>
         <ScrollArrow />
 
-        <Suspense fallback={<ListSqueleton />}>
-          {loading ? <ListSqueleton /> : <HomeList />}
+        <Suspense fallback={<ListSkeleton />}>
+          {loading ? <ListSkeleton /> : <HomeList />}
         </Suspense>
 
         <Detail />

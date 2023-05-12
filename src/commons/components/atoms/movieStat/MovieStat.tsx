@@ -1,6 +1,4 @@
-interface MovieStatProps {
-  height?: string
-}
+import { MovieStatProps } from '../atoms.types'
 
 export const MovieStat = ({ height }: MovieStatProps) => (
   <svg

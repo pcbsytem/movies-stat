@@ -1,33 +1,33 @@
-import { useMemo, useState, useCallback } from 'react';
-import { useDispatch } from "react-redux"
-import api from "../../../services/api"
-import { API_TOKEN } from "../../../services/api.constants"
-import { addMovieList } from "../../../store/modules/home/reducer"
-import { useCoreSelector } from "../../../commons/hooks/useCoreSelector"
+import { useMemo, useState, useCallback } from 'react'
+import { useDispatch } from 'react-redux'
+import api from '../../../services/api'
+import { API_TOKEN } from '../../../services/api.constants'
+import { addMovieList } from '../../../store/modules/home/reducer'
+import { useCoreSelector } from '../../../commons/hooks/useCoreSelector'
 
 export const useMovies = () => {
   const dispatch = useDispatch()
   const [loading, setLoading] = useState(false)
   const { home: movies } = useCoreSelector((state) => state)
 
-  const getMoviesSearch = useCallback(async (page = 1, query = "") => {
+  const getMoviesSearch = useCallback(async (page = 1, query = '') => {
     const params = query ? {
       api_key: API_TOKEN,
-      language: "pt-BR",
+      language: 'pt-BR',
       query,
       page,
     } : {
       api_key: API_TOKEN,
-      language: "pt-BR",
+      language: 'pt-BR',
       page,
-    };
+    }
     setLoading(true)
     try {
-      const { data } = await api.get("search/movie", { params })
+      const { data } = await api.get('search/movie', { params })
       const result =
-        data.results?.length > 0 ? data : { empty: true };
+        data.results?.length > 0 ? data : { empty: true }
       setLoading(false)
-      dispatch(addMovieList(result));
+      dispatch(addMovieList(result))
     } catch (error) {
       dispatch(addMovieList({
         empty: true,
@@ -44,20 +44,20 @@ export const useMovies = () => {
 
   }, [dispatch])
 
-  const getUpcomingMovies = useCallback(async (page = 1) => {
-    const api_key = API_TOKEN;
+  const getUpcomingMovies = useCallback(async (page?: number) => {
+    const api_key = API_TOKEN
     const params = {
       api_key,
-      language: "pt-BR",
-      page,
-    };
+      language: 'pt-BR',
+      page: page || 1,
+    }
     setLoading(true)
     try {
-      const { data } = await api.get("movie/upcoming", { params })
+      const { data } = await api.get('movie/upcoming', { params })
       const result =
-        data.results?.length > 0 ? data : { empty: true };
+        data.results?.length > 0 ? data : { empty: true }
       setLoading(false)
-      dispatch(addMovieList(result));
+      dispatch(addMovieList(result))
     } catch (error) {
       dispatch(addMovieList({
         empty: true,

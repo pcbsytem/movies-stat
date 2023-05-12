@@ -1,6 +1,6 @@
 import { Col, FlexboxGrid, Placeholder } from 'rsuite'
 
-export const CardSqueleton = () => {
+export const CardSkeleton = () => {
   return (
     <div className="card">
       <FlexboxGrid.Item as={Col} colspan={24} md={5}>

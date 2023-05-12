@@ -2,10 +2,10 @@ import { memo } from 'react'
 import { FlexboxGrid } from 'rsuite'
 import { Pagination } from '../../../../../commons/components'
 import { useMovies } from '../../../hooks/useMovies'
-import { CardSqueleton } from '../../index'
-import './ListSqueleton.css'
+import { CardSkeleton } from '../../index'
+import './ListSkeleton.css'
 
-const ListSqueletonComponent = () => {
+const ListSkeletonComponent = () => {
   const { movies } = useMovies()
   return (
     <section style={{ textAlign: 'center', width: '100%' }}>
@@ -19,7 +19,7 @@ const ListSqueletonComponent = () => {
           />
           <FlexboxGrid className="homeList" justify="center">
             {movies.results.map((item, index) => (
-              <CardSqueleton key={index} />
+              <CardSkeleton key={index} />
             ))}
           </FlexboxGrid>
           <Pagination
@@ -34,4 +34,4 @@ const ListSqueletonComponent = () => {
   )
 }
 
-export const ListSqueleton = memo(ListSqueletonComponent)
+export const ListSkeleton = memo(ListSkeletonComponent)

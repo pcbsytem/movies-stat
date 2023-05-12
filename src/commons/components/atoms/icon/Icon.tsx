@@ -5,7 +5,7 @@ import FileImageO from '@rsuite/icons/legacy/FileImageO'
 import FileMovieO from '@rsuite/icons/legacy/FileMovieO'
 import FrownO from '@rsuite/icons/legacy/FrownO'
 import Trash2 from '@rsuite/icons/legacy/Trash2'
-import { MovieStat } from './MovieStat'
+import { MovieStat } from '../movieStat/MovieStat'
 import { IconProps } from '../atoms.types'
 
 export const Icon = ({ iconName, height, width }: IconProps) => {

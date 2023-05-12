@@ -5,10 +5,7 @@ import { FAVORITE_LOCAL_STORE_KEY, FAVORITE_TOAST_CONFIG, FAVORITE_TOAST_TEXT } 
 import { addFavoriteMovies } from "../../../store/modules/favorite/reducer"
 import { useCoreSelector } from "../../../commons/hooks/useCoreSelector"
 import { MovieProps } from "../../../commons/typing"
-
-interface HandleFavoriteRemoveProps {
-  id: number
-}
+import { HandleFavoriteRemoveProps, handleExistInFavoriteProps } from "../Favorite.types"
 
 export const useFavorite = () => {
   const dispatch = useDispatch()
@@ -26,7 +23,7 @@ export const useFavorite = () => {
 
 
 
-  const handleExistInFavorite = useCallback(({ id }: { id: number | null }) =>
+  const handleExistInFavorite = useCallback(({ id }: handleExistInFavoriteProps) =>
     favorite.findIndex((item: MovieProps) => item.id === id) !== -1
     , [favorite])
 

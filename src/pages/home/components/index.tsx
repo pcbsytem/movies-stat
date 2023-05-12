@@ -1,4 +1,4 @@
 export { Card } from './molecules/card/Card'
-export { CardSqueleton } from './atoms/cardSqueleton/CardSqueleton'
+export { CardSkeleton } from './atoms/cardSkeleton/CardSkeleton'
 export { HomeList } from './organisms/homeList/HomeList'
-export { ListSqueleton } from './molecules/listSqueleton/ListSqueleton'
+export { ListSkeleton } from './molecules/listSkeleton/ListSkeleton'

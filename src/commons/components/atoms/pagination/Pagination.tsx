@@ -1,12 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Pagination as PaginationRsuite } from 'rsuite'
-
-interface PaginationProps {
-  currentPage: number
-  handlePagination: (page: number) => void
-  maxButtons: number
-  totalCount: number
-}
+import { PaginationProps } from '../atoms.types'
 
 export function Pagination({
   currentPage = 1,
@@ -14,16 +8,17 @@ export function Pagination({
   maxButtons,
   totalCount = 10
 }: PaginationProps) {
-  const [activePage, setActivePage] = useState(currentPage)
+  const [activePage, setActivePage] = useState<number | undefined>(currentPage)
   const [totalPage, setTotalPage] = useState(totalCount)
 
   useEffect(() => {
     setTotalPage(totalCount)
   }, [totalCount])
 
-  function handleSelect(eventKey) {
-    handlePagination(eventKey)
-    setActivePage(eventKey)
+  const handleSelect = (eventKey: string | number) => {
+    const activeKey = Number(eventKey)
+    handlePagination(activeKey)
+    setActivePage(activeKey)
   }
 
   return (
