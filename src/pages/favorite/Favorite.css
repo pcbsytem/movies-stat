@@ -1,0 +1,27 @@
+.favoriteList {
+  margin: 32px 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+div.favoriteEmpty {
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+}
+
+/* Helpers */
+
+.centerText {
+  text-align: center;
+}
+
+.endText {
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .favoriteItem {
+    margin: 16px;
+  }
+}

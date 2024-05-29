@@ -1,0 +1,55 @@
+.card {
+  margin: 8px;
+  min-height: 272px;
+  perspective: 272px;
+  background-color: transparent;
+  transition: transform 200ms ease;
+}
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+div.cardInner {
+  width: 100%;
+  display: flex;
+  padding: 0 !important;
+  justify-content: center;
+}
+
+.cardInner .rs-flex-box-grid {
+  height: 177px;
+  overflow: auto;
+  color: #424242;
+  text-align: center;
+  padding: 2px 8px;
+  background-color: #fafafa;
+  border-radius: 0px 0px 6px 6px;
+}
+
+.cardInner .rs-flex-box-grid .overview {
+  width: 100%;
+  text-align: justify;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content img,
+.content .cardWithoutImage {
+  height: 272px;
+  width: 100%;
+  min-width: 185px;
+  border-radius: 6px;
+  background-color: #eeee;
+}
+
+button.cardFavoriteButton {
+  top: 8px;
+  right: 8px;
+  position: absolute;
+}
