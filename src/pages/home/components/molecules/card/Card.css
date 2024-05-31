@@ -1,5 +1,5 @@
 .card {
-  margin: 8px;
+  margin: 0.5rem;
   min-height: 272px;
   perspective: 272px;
   background-color: transparent;
@@ -22,9 +22,9 @@ div.cardInner {
   overflow: auto;
   color: #424242;
   text-align: center;
-  padding: 2px 8px;
+  padding: 0.125rem 0.5rem;
   background-color: #fafafa;
-  border-radius: 0px 0px 6px 6px;
+  border-radius: 0rem 0rem 0.375rem 0.375rem;
 }
 
 .cardInner .rs-flex-box-grid .overview {
@@ -44,12 +44,12 @@ div.cardInner {
   height: 272px;
   width: 100%;
   min-width: 185px;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   background-color: #eeee;
 }
 
 button.cardFavoriteButton {
-  top: 8px;
-  right: 8px;
+  top: 0.5rem;
+  right: 0.5rem;
   position: absolute;
 }

@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react';
 import {
   Container,
   Content,
@@ -6,31 +6,31 @@ import {
   FlexboxGrid,
   Header,
   IconButton
-} from 'rsuite'
-import { formatDate } from '../../services/helper'
-import { Icon, Image } from '../../commons/components'
-import { useFavorite } from '../favorite/hooks/useFavorite'
-import { useDetail } from './hooks/useDetail'
-import { DETAIL_MODAL_TEXT } from './Detail.constants'
-import { SimilarMoviesSlider } from './components'
+} from 'rsuite';
+import { formatDate } from '../../services/helper';
+import { Icon, Image } from '../../commons/components';
+import { useFavorite } from '../favorite/hooks/useFavorite';
+import { useDetail } from './hooks/useDetail';
+import { DETAIL_MODAL_TEXT } from './Detail.constants';
+import { SimilarMoviesSlider } from './components';
 
 const DetailComponent = () => {
-  const [similarMovies, setSimilarMovies] = useState([])
+  const [similarMovies, setSimilarMovies] = useState([]);
   const { detail, showDetail, handleDetailClose, handleSimilarMovies } =
-    useDetail()
-  const { handleExistInFavorite, handleFavoriteAdd } = useFavorite()
+    useDetail();
+  const { handleExistInFavorite, handleFavoriteAdd } = useFavorite();
 
   useEffect(() => {
     const handleGetSimilarMovies = async () => {
-      const result = await handleSimilarMovies()
-      setSimilarMovies([...(result as typeof similarMovies)])
-    }
+      const result = await handleSimilarMovies();
+      setSimilarMovies([...(result as typeof similarMovies)]);
+    };
 
     if (detail?.id) {
-      handleGetSimilarMovies()
+      handleGetSimilarMovies();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [detail?.id])
+  }, [detail?.id]);
 
   return (
     <Drawer open={showDetail} onClose={handleDetailClose}>
@@ -41,22 +41,22 @@ const DetailComponent = () => {
               <Image
                 path={detail?.backdrop_path}
                 title={detail?.title}
-                width="100%"
+                width='100%'
               />
             ) : (
               <FlexboxGrid
-                className="cardBackWithoutImage"
-                justify="center"
-                align="middle"
+                className='cardBackWithoutImage'
+                justify='center'
+                align='middle'
                 style={{ height: '337px', width: '100%' }}
-                color="gray"
+                color='gray'
               >
-                <Icon iconName="fileImageO" height="120" width="120" />
+                <Icon iconName='fileImageO' height='120' width='120' />
               </FlexboxGrid>
             )}
           </Header>
 
-          <Content style={{ padding: '16px' }}>
+          <Content style={{ padding: '1rem' }}>
             <h4>{detail?.title}</h4>
             <br />
             <div
@@ -69,19 +69,19 @@ const DetailComponent = () => {
               {detail?.overview || DETAIL_MODAL_TEXT.OVERVIEW_DEFAULT}
             </div>
             <br />
-            <FlexboxGrid align="middle" justify="space-between">
+            <FlexboxGrid align='middle' justify='space-between'>
               <FlexboxGrid.Item colspan={2}>
                 <IconButton
-                  classPrefix="cardFavoriteButton"
-                  icon={<Icon iconName="heart" />}
+                  classPrefix='cardFavoriteButton'
+                  icon={<Icon iconName='heart' />}
                   onClick={() => handleFavoriteAdd(detail)}
                   title={
                     handleExistInFavorite({ id: detail.id })
                       ? DETAIL_MODAL_TEXT.FAVORITE_ICON_ADDED_TEXT
                       : DETAIL_MODAL_TEXT.FAVORITE_ICON_TEXT
                   }
-                  size="lg"
-                  color="red"
+                  size='lg'
+                  color='red'
                   appearance={
                     handleExistInFavorite({ id: detail.id })
                       ? 'primary'
@@ -111,7 +111,7 @@ const DetailComponent = () => {
         </Container>
       </Drawer.Body>
     </Drawer>
-  )
-}
+  );
+};
 
-export const Detail = memo(DetailComponent)
+export const Detail = memo(DetailComponent);

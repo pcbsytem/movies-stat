@@ -1,7 +1,6 @@
 div.rs-placeholder-graph {
   min-width: 185px;
-  /* width: 185px !important; */
   height: 272px !important;
-  margin-bottom: 16px;
-  border-radius: 6px;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
 }
