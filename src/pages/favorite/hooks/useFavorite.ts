@@ -37,8 +37,10 @@ export const useFavorite = () => {
   }, []);
 
   const handleExistInFavorite = useCallback(
-    ({ id }: handleExistInFavoriteProps) =>
-      favorite.findIndex((item: MovieProps) => item.id === id) !== -1,
+    ({ id }: handleExistInFavoriteProps) => {
+      const index = favorite.findIndex((item: MovieProps) => item.id === id);
+      return index === -1;
+    },
     [favorite]
   );
 
