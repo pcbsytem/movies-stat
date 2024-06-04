@@ -1,0 +1,14 @@
+.voteAverage {
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+.voteAverage.high {
+  background-color: #e8f5e9;
+  border: 2px solid #66bb6a;
+}
+
+.voteAverage.low {
+  background-color: #ffebee;
+  border: 2px solid #ef5350;
+}
