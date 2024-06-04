@@ -6,3 +6,7 @@ export const DETAIL_MODAL_TEXT = {
   VOTE_AVERAGE_TEXT: 'Relevância',
   GENRE_TEXT: 'Filmes do mesmo gênero'
 };
+
+export const SIMILAR_MOVIES_EMPTY_STATE = {
+  EMPTY_STATE: 'Infelizmente, não encontramos títulos similares.'
+};
