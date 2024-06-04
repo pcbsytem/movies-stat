@@ -5,14 +5,15 @@ import {
   Drawer,
   FlexboxGrid,
   Header,
-  IconButton
+  Button
 } from 'rsuite';
-import { formatDate } from '../../services/helper';
 import { Icon, Image } from '../../commons/components';
 import { useFavorite } from '../favorite/hooks/useFavorite';
 import { useDetail } from './hooks/useDetail';
 import { DETAIL_MODAL_TEXT } from './Detail.constants';
 import { SimilarMoviesSlider } from './components';
+import { VoteAverage } from './components/atoms/voteAverage/VoteAverage';
+import { ReleaseDate } from './components/atoms/releaseDate/ReleaseDate';
 
 const DetailComponent = () => {
   const [similarMovies, setSimilarMovies] = useState([]);
@@ -33,7 +34,11 @@ const DetailComponent = () => {
   }, [detail?.id]);
 
   return (
-    <Drawer open={showDetail} onClose={handleDetailClose}>
+    <Drawer
+      size={window.screen.width === 800 ? 'full' : 'sm'}
+      open={showDetail}
+      onClose={handleDetailClose}
+    >
       <Drawer.Body style={{ padding: 0 }}>
         <Container>
           <Header>
@@ -69,43 +74,35 @@ const DetailComponent = () => {
               {detail?.overview || DETAIL_MODAL_TEXT.OVERVIEW_DEFAULT}
             </div>
             <br />
-            <FlexboxGrid align='middle' justify='space-between'>
-              <FlexboxGrid.Item colspan={2}>
-                <IconButton
-                  classPrefix='cardFavoriteButton'
-                  icon={<Icon iconName='heart' />}
-                  onClick={() => handleFavoriteAdd(detail)}
-                  title={
-                    handleExistInFavorite({ id: detail.id })
-                      ? DETAIL_MODAL_TEXT.FAVORITE_ICON_ADDED_TEXT
-                      : DETAIL_MODAL_TEXT.FAVORITE_ICON_TEXT
-                  }
-                  size='lg'
-                  color='red'
-                  appearance={
-                    handleExistInFavorite({ id: detail.id })
-                      ? 'primary'
-                      : 'default'
-                  }
-                />
-              </FlexboxGrid.Item>
-              <FlexboxGrid.Item colspan={4} style={{ textAlign: 'center' }}>
-                <b>{DETAIL_MODAL_TEXT.RELEASE_TEXT}</b>{' '}
-                {formatDate(detail?.release_date)}
-              </FlexboxGrid.Item>
-              <FlexboxGrid.Item colspan={4} style={{ textAlign: 'center' }}>
-                <b>{DETAIL_MODAL_TEXT.RELEASE_TEXT}</b>
-                <p>
-                  {`${
-                    detail?.vote_average
-                      ? detail?.vote_average * 10
-                      : 'Sem voto'
-                  }%`}
-                </p>
-              </FlexboxGrid.Item>
+            <FlexboxGrid align='middle'>
+              <ReleaseDate releaseDate={detail.release_date} />
+              <VoteAverage voteAverage={detail.vote_average} />
             </FlexboxGrid>
             <br />
-            <h4>Filmes do mesmo gênero</h4>
+            <FlexboxGrid>
+              <Button
+                color='red'
+                startIcon={<Icon iconName='heart' />}
+                title={
+                  !handleExistInFavorite({ id: detail.id })
+                    ? DETAIL_MODAL_TEXT.FAVORITE_ICON_ADDED_TEXT
+                    : DETAIL_MODAL_TEXT.FAVORITE_ICON_TEXT
+                }
+                onClick={() => handleFavoriteAdd(detail)}
+                appearance={
+                  handleExistInFavorite({ id: detail.id })
+                    ? 'primary'
+                    : 'default'
+                }
+                disabled={!handleExistInFavorite({ id: detail.id })}
+                block
+              >
+                Adicionar favoritos
+              </Button>
+            </FlexboxGrid>
+            <br />
+
+            <h4>{DETAIL_MODAL_TEXT.GENRE_TEXT}</h4>
             <SimilarMoviesSlider list={similarMovies} />
           </Content>
         </Container>
