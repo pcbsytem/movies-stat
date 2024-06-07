@@ -7,7 +7,7 @@ import './Card.css';
 export const Card = ({ movie, action }: CardProps) => {
   const randomColor = Number(String(Math.random() * 7).slice(0, 1));
   return (
-    <div className='card' onClick={() => action && action(movie)}>
+    <button className='card' onClick={() => action && action(movie)}>
       <FlexboxGrid.Item className='cardInner' as={Col} colspan={24} md={5}>
         <div className='content'>
           {movie?.poster_path ? (
@@ -28,6 +28,6 @@ export const Card = ({ movie, action }: CardProps) => {
           )}
         </div>
       </FlexboxGrid.Item>
-    </div>
+    </button>
   );
 };
