@@ -1,3 +1,7 @@
 .rs-header {
   width: 100%;
 }
+
+.rs-navbar-item svg {
+  margin-right: 8px;
+}

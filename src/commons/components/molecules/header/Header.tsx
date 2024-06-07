@@ -1,14 +1,14 @@
-import { useNavigate } from 'react-router-dom'
-import { Nav, Navbar } from 'rsuite'
-import { Icon } from '../../index'
-import { useMemo } from 'react'
-import './Header.css'
+import { useNavigate } from 'react-router-dom';
+import { Nav, Navbar } from 'rsuite';
+import { Icon } from '../../index';
+import { useMemo } from 'react';
+import './Header.css';
 
 export function Header() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function handleClick(route: string) {
-    navigate(`/${route}`)
+    navigate(`/${route}`);
   }
 
   const MenuList = useMemo(
@@ -17,12 +17,12 @@ export function Header() {
       { title: 'Favoritos', name: 'favoritos', icon: 'heart' }
     ],
     []
-  )
+  );
 
   return (
-    <Navbar classPrefix="header" appearance="inverse">
-      <Navbar.Brand href="/">
-        <Icon iconName="movieStat" height="24px" />
+    <Navbar classPrefix='header' appearance='inverse'>
+      <Navbar.Brand href='/'>
+        <Icon iconName='movieStatShort' height='24px' width='24px' />
       </Navbar.Brand>
       <Nav>
         {MenuList.map((item) => (
@@ -31,10 +31,10 @@ export function Header() {
             onClick={() => handleClick(item.name)}
             key={item.name}
           >
-            {` ${item.title}`}
+            {`${item.title}`}
           </Nav.Item>
         ))}
       </Nav>
     </Navbar>
-  )
+  );
 }

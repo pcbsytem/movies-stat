@@ -19,6 +19,7 @@ export interface SliderProps {
 
 export interface MovieStatProps {
   height?: string;
+  width?: string;
 }
 
 export interface ImageProps {

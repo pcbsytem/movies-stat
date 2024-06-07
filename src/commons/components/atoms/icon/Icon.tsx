@@ -1,12 +1,13 @@
-import ChevronUp from '@rsuite/icons/legacy/ChevronUp'
-import Heart from '@rsuite/icons/legacy/Heart'
-import Home from '@rsuite/icons/legacy/Home'
-import FileImageO from '@rsuite/icons/legacy/FileImageO'
-import FileMovieO from '@rsuite/icons/legacy/FileMovieO'
-import FrownO from '@rsuite/icons/legacy/FrownO'
-import Trash2 from '@rsuite/icons/legacy/Trash2'
-import { MovieStat } from '../movieStat/MovieStat'
-import { IconProps } from '../atoms.types'
+import ChevronUp from '@rsuite/icons/legacy/ChevronUp';
+import Heart from '@rsuite/icons/legacy/Heart';
+import Home from '@rsuite/icons/legacy/Home';
+import FileImageO from '@rsuite/icons/legacy/FileImageO';
+import FileMovieO from '@rsuite/icons/legacy/FileMovieO';
+import FrownO from '@rsuite/icons/legacy/FrownO';
+import Trash2 from '@rsuite/icons/legacy/Trash2';
+import { MovieStat } from '../movieStat/MovieStat';
+import { MovieStatShort } from '../moviesStatShort/MoviesStatShort';
+import { IconProps } from '../atoms.types';
 
 export const Icon = ({ iconName, height, width }: IconProps) => {
   const ComponentIcon = () => {
@@ -18,10 +19,11 @@ export const Icon = ({ iconName, height, width }: IconProps) => {
       fileMovieO: <FileMovieO />,
       frownO: <FrownO height={height} width={width} />,
       trash2: <Trash2 />,
-      movieStat: <MovieStat height={height} />
-    }
+      movieStat: <MovieStat height={height} width={width} />,
+      movieStatShort: <MovieStatShort height={height} width={width} />
+    };
 
-    return iconObject[iconName as keyof typeof iconObject]
-  }
-  return <ComponentIcon />
-}
+    return iconObject[iconName as keyof typeof iconObject];
+  };
+  return <ComponentIcon />;
+};
