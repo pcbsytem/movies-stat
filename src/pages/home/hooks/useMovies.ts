@@ -1,7 +1,6 @@
 import { useMemo, useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import api from '../../../services/api';
-import { API_TOKEN } from '../../../services/api.constants';
 import { addMovieList } from '../../../store/modules/home/reducer';
 import { useCoreSelector } from '../../../commons/hooks/useCoreSelector';
 
@@ -14,13 +13,11 @@ export const useMovies = () => {
     async (page = 1, query = '') => {
       const params = query
         ? {
-            api_key: API_TOKEN,
             language: 'pt-BR',
             query,
             page
           }
         : {
-            api_key: API_TOKEN,
             language: 'pt-BR',
             page
           };
@@ -51,9 +48,7 @@ export const useMovies = () => {
 
   const getUpcomingMovies = useCallback(
     async (page?: number) => {
-      const api_key = API_TOKEN;
       const params = {
-        api_key,
         language: 'pt-BR',
         page: page || 1
       };
