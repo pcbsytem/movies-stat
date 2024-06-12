@@ -1,16 +1,21 @@
-import { FlexboxGrid } from 'rsuite'
-import { Icon } from '../../index'
-import { HOME_LIST_TEXT } from '../../../../pages/home/Home.constants'
+import { FlexboxGrid } from 'rsuite';
+import { Icon } from '../../index';
+import { HOME_LIST_EMPTY_TEXT } from '../../../../pages/home/Home.constants';
 
 export const EmptyState = () => {
   return (
     <FlexboxGrid
-      justify="center"
-      align="middle"
+      justify='center'
+      align='middle'
       style={{ flexDirection: 'column' }}
     >
-      <Icon iconName="frownO" height="120" width="120" />
-      <h3>{HOME_LIST_TEXT.DESCRIPTION}</h3>
+      <h3>{HOME_LIST_EMPTY_TEXT.TITLE}</h3>
+      <p>{HOME_LIST_EMPTY_TEXT.SUBTITLE}</p>
+      <br />
+      <br />
+      <Icon iconName='homeEmptyState' height='360' width='360' />
+      <br />
+      <br />
     </FlexboxGrid>
-  )
-}
+  );
+};
