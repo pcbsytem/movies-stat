@@ -1,4 +1,5 @@
 .card {
+  width: 180px;
   margin: 0.5rem;
   min-height: 272px;
   perspective: 272px;
