@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { TypeAttributes } from 'rsuite/esm/@types/common';
+import { TypeAttributes } from 'rsuite/esm/internals/types';
 export interface IconProps {
   iconName: string;
   height?: string;
