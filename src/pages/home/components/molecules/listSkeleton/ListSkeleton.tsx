@@ -8,27 +8,22 @@ import './ListSkeleton.css';
 const ListSkeletonComponent = () => {
   const { movies } = useMovies();
   return (
-    <section style={{ textAlign: 'center', width: '100%' }}>
+    <section>
       {movies.results?.length > 0 && (
-        <>
-          <Pagination
-            maxButtons={5}
-            currentPage={movies.page}
-            totalCount={movies.total_pages}
-            handlePagination={() => null}
-          />
-          <FlexboxGrid className='homeList' justify='center'>
-            {movies.results.map((item, index) => (
-              <CardSkeleton key={`${item.id} - ${index}`} />
-            ))}
-          </FlexboxGrid>
-          <Pagination
-            maxButtons={5}
-            currentPage={movies.page}
-            totalCount={movies.total_pages}
-            handlePagination={() => null}
-          />
-        </>
+        <FlexboxGrid className='homeList' justify='center'>
+          {movies.results.map((item, index) => (
+            <CardSkeleton key={`${item.id} - ${index}`} />
+          ))}
+        </FlexboxGrid>
+      )}
+
+      {movies.results?.length > 1 && (
+        <Pagination
+          maxButtons={5}
+          currentPage={movies.page}
+          totalCount={movies.total_pages}
+          handlePagination={() => null}
+        />
       )}
     </section>
   );
