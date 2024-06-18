@@ -18,7 +18,7 @@ export function Home() {
   }, []);
 
   return (
-    <Container style={{ width: '100%' }}>
+    <Container>
       <Banner
         title={HOME_BANNER_TEXT.TITLE}
         subTitle={HOME_BANNER_TEXT.SUBTITLE}
