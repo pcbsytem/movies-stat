@@ -1,44 +1,56 @@
-import { useCallback, useMemo } from 'react'
-import { useDispatch } from 'react-redux'
-import { closeDetail, openDetail } from '../../../store/modules/detail/reducer'
-import { InitialStateProps } from '../../../store/modules/detail/reducer.types'
-import { useCoreSelector } from '../../../commons/hooks/useCoreSelector'
-import api from '../../../services/api'
-import { API_TOKEN } from '../../../services/api.constants'
+import { useCallback, useMemo } from 'react';
+import { useDispatch } from 'react-redux';
+import { closeDetail, openDetail } from '../../../store/modules/detail/reducer';
+import { InitialStateProps } from '../../../store/modules/detail/reducer.types';
+import { useCoreSelector } from '../../../commons/hooks/useCoreSelector';
+import api from '../../../services/api';
 
 export const useDetail = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const {
     detail: { showDetail, ...rest }
-  } = useCoreSelector((state) => state)
+  } = useCoreSelector((state) => state);
 
-  const handleDetailClose = useCallback(() => {
-    dispatch(closeDetail())
-  }, [dispatch])
+  const handleDetailMovie = useCallback(async ({ id }: InitialStateProps) => {
+    const params = {
+      language: 'pt-BR'
+    };
 
-  const handleDetailOpen = useCallback(
-    (movie: InitialStateProps) => {
-      dispatch(openDetail({ ...movie }))
-    },
-    [dispatch]
-  )
+    try {
+      const { data } = await api.get(`/movie/${id}`, { params });
+      return data;
+    } catch (error) {
+      return [];
+    }
+  }, []);
 
   const handleSimilarMovies = useCallback(async () => {
     const params = {
-      api_key: API_TOKEN,
       language: 'pt-BR',
       page: 1
-    }
+    };
 
     try {
       const {
         data: { results }
-      } = await api.get(`/movie/${rest.id}/similar`, { params })
-      return results
+      } = await api.get(`/movie/${rest.id}/similar`, { params });
+      return results;
     } catch (error) {
-      return []
+      return [];
     }
-  }, [rest])
+  }, [rest]);
+
+  const handleDetailClose = useCallback(() => {
+    dispatch(closeDetail());
+  }, [dispatch]);
+
+  const handleDetailOpen = useCallback(
+    async (movie: InitialStateProps) => {
+      const result = await handleDetailMovie(movie);
+      dispatch(openDetail({ ...result }));
+    },
+    [dispatch, handleDetailMovie]
+  );
 
   return useMemo(
     () => ({
@@ -49,5 +61,5 @@ export const useDetail = () => {
       handleSimilarMovies
     }),
     [handleDetailClose, handleDetailOpen, handleSimilarMovies, rest, showDetail]
-  )
-}
+  );
+};
